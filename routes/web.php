@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/artist', function () {
+    return view('artist');
+});
+Route::get('/album', function () {
+    return view('album');
+});
+Route::get('/song', function () {
+    return view('song');
+});
+
+
+

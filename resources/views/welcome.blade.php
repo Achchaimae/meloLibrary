@@ -23,26 +23,26 @@
             <img src="./images/LM9AWED.png" class="w-10 h-10 rounded-full" alt="">
         </div>
         <ul class="px-5 flex h-96 flex-col place-content-evenly">
-            <a href="index.html" class="hover:bg-white hover:text-blue-500 p-2 ">
+            <a href="/" class="hover:bg-white hover:text-blue-500 p-2 ">
                 <li>
                     <i class="fa-solid fa-house"></i>
                     Explore
                 </li>
             </a>
-            <a href="Artist.html" class="hover:bg-white hover:text-blue-500 p-2 ">
+            <a href="/artist" class="hover:bg-white hover:text-blue-500 p-2 ">
                 <li>
                     <i class="fa-solid fa-user"></i>
                     Artists
                 
                 </li>
             </a>
-            <a href="Album.html" class="hover:bg-white hover:text-blue-500 p-2 ">
+            <a href="/Album" class="hover:bg-white hover:text-blue-500 p-2 ">
                 <li>
                     <i class="fa-solid fa-compact-disc"></i>
                     Albums
                 </li>
             </a>
-            <a href="Playlist.html" class="hover:bg-white hover:text-blue-500 p-2 " >
+            <a href="/Playlist" class="hover:bg-white hover:text-blue-500 p-2 " >
                 <li>
                     <i class="fa-solid fa-music"></i>
                     Playlist

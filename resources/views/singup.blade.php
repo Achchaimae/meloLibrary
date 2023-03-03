@@ -18,7 +18,12 @@
     <title>Sign Up</title>
 </head>
 <body class="bg-gray-300   " style="background-image: url(./images/casque.jpg); object-fit:cover;">
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8    ">
+  <button class="bg-white rounded-full p-2 px-3 mt-2 ml-2">
+    <a href="/">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+  </button>
+    <div class="mx-auto max-w-screen-xl px-4 pb-2 sm:px-6 lg:px-8    ">
         <div class="mx-auto max-w-lg">
           <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
             Get started today

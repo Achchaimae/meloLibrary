@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/artist', function () {
     return view('artist');
@@ -22,9 +22,14 @@ Route::get('/artist', function () {
 Route::get('/album', function () {
     return view('album');
 });
-Route::get('/song', function () {
-    return view('song');
+Route::get('/playlist', function () {
+    return view('playlist');
 });
-
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/singup', function () {
+    return view('singup');
+});
 
 

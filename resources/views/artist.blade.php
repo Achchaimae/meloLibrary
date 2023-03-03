@@ -17,43 +17,43 @@
     <link rel="icon" href="images/header.svg" type="image/icon type">
     <title>MeloLobrary</title>
 </head>
-<body class="flex  text-white h-screen fixed scroll-smooth scroll-smooth" style="background-color: black;">
-    <aside class="flex flex-col w-60 backg" >
+<body class="grid grid-cols-[auto_1fr] text-white h-screen" style="background-color: black;">
+    <aside class="w-20 flex flex-col sm:w-60 backg bg-gray-800" >
         <div class="px-5 py-3">
             <img src="./images/LM9AWED.png" class="w-10 h-10 rounded-full" alt="">
         </div>
         <ul class="px-5 flex h-96 flex-col place-content-evenly">
 
-                <a href="index.html" class="hover:bg-white hover:text-blue-500 p-2 ">
+                <a href="/" class="hover:bg-white hover:text-blue-500 p-2 ">
                     <li>
                         <i class="fa-solid fa-house"></i>
-                        Explore
+                        <span class="hidden sm:inline"> Explore</span>
                     </li>
                 </a>
-                <a href="Artist.html" class="hover:bg-white hover:text-blue-500 p-2 ">
+                <a href="artist" class="hover:bg-white hover:text-blue-500 p-2 ">
                     <li>
                         <i class="fa-solid fa-user"></i>
-                        Artists
+                        <span class="hidden sm:inline">Artists</span>
                     
                     </li>
                 </a>
-                <a href="Album.html" class="hover:bg-white hover:text-blue-500 p-2 ">
+                <a href="album" class="hover:bg-white hover:text-blue-500 p-2 ">
                     <li>
                         <i class="fa-solid fa-compact-disc"></i>
-                        Albums
+                        <span class="hidden sm:inline">Albums</span>
                     </li>
                 </a>
-                <a href="#" class="hover:bg-white hover:text-blue-500 p-2 " >
+                <a href="playlist" class="hover:bg-white hover:text-blue-500 p-2 " >
                     <li>
                         <i class="fa-solid fa-music"></i>
-                        Playlist
+                        <span class="hidden sm:inline">Playlist</span>
                     </li>
                 </a>
             
             
         </ul>
     </aside>
-    <section class=" px-1 overflow-y-scroll">
+    <section class=" px-1 overflow-y-scroll ">
         <div class="flex justify-between items-center">
             <h1 class="font-bold text-3xl pb-5">Discover</h1>
             <div>
@@ -65,7 +65,7 @@
         
         <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5">Recently played</h2>
         <div class="flex flex-wrap">
-            <div class="flex  px-5 space-x-5 ">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-5 ">
                 <div class="flex flex-col justify-center h-64 w-fit p-4 items-center bg-[#058ED9] rounded ">
                     <img src="./images/LM9AWED.png" alt="oussama" class="w-44 rounded-full drop-shadow-2xl  ">
                     <h3 class="text-white font-bold text-sm  text-xl">Oussama Ouafidi</h3>

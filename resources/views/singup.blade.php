@@ -41,7 +41,7 @@
                   name="name"
                   class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
                   placeholder="Enter Your Name"
-                  value={{old('name')}}
+                  value="{{old('name')}}"
                 />
       
               </div>
@@ -53,13 +53,7 @@
               <label for="email" >What's your email?</label>
       
               <div class="relative">
-                <input
-                  type="email"
-                  name="email"
-                  class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
-                  placeholder="Enter email"
-                  value={{old('email')}}
-                />
+                <input type="email" name="email" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12" placeholder="Enter email" value="{{ old('email') }}" />
       
               </div>
             </div>
@@ -75,7 +69,7 @@
                   name="password"
                   class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
                   placeholder="Enter password"
-                  value={{old('password')}}
+                  value="{{old('password')}}"
                 />
               </div>
             </div>
@@ -100,13 +94,13 @@
               <div>
                 <label for="nickname" >What should we call you?</label>
         
-                <div class="relative">
+               <div class="relative">
                   <input
                     type="text"
                     name="nickname"
                     class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
                     placeholder="Enter your nickname"
-                    value="{{old('nickname')}}"
+                    value="{{ old('nickname')}}"
                   />
                 </div>
 

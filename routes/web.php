@@ -31,5 +31,18 @@ Route::get('/login', function () {
 Route::get('/singup', function () {
     return view('singup');
 });
+Route::get('/Dashboard', function () {
+    return view('Admin/Songs');
+});
+Route::get('Comments', function () {
+    return view('Admin/Comments');
+});
+Route::get('Bands', function () {
+    return view('Admin/Bands');
+});
+Route::get('Playlists', function () {
+    return view('Admin/playlist');
+});
+
 
 

@@ -24,6 +24,9 @@
     <section class=" mx-4">
         <h1 class="text-3xl font-bold m-2">Playlist</h1>
         <div class="mt-6  w-full  flex justify-between gap-2 p pb-44 pt-4 flex-wrap">
+            <div class="bg-[#058ED9] text-white w-60 h-60 p-8  rounded  flex flex-col justify-around items-center">
+                <i class="fa-solid fa-plus text-2xl "></i>
+            </div>
             <div class="bg-[#058ED9] rounded w-60 h-60 p-4 ">
                 <div class="grid grid-cols-2 ">
                     <img src="./images/cover.jpg" alt="playlist image"  class="w-22">

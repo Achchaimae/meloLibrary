@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,9 @@ Route::get('/playlist', function () {
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/singup', function () {
-    return view('singup');
-});
+// Route::get('/register', function () {
+//     return view('singup');
+// });
 Route::get('/Dashboard', function () {
     return view('Admin/Songs');
 });
@@ -43,6 +44,11 @@ Route::get('Bands', function () {
 Route::get('Playlists', function () {
     return view('Admin/playlist');
 });
+
+//show register/create form
+Route::get('/register', [UserController::class, 'create']);
+//create new user
+Route::post('/users', [UserController::class, 'store']);
 
 
 

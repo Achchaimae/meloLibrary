@@ -16,12 +16,17 @@
     <link rel="stylesheet" href="./css/style.css">
      <!-- icon link -->
     <link rel="icon" href="images/header.svg" type="image/icon type">
+    <!-- alpine js -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css'>
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>MeloLobrary</title>
 </head>
-<body class="grid grid-cols-[auto_1fr]  text-white h-screen fixed scroll-smooth " style="background-color: black;">
+<body class="grid grid-cols-[auto_1fr]  text-white h-screen fixed scroll-smooth w-full" style="background-color: black;">
     @extends('layouts.Nav')
     @section('content')
 
+    
+    <x-flash-message />
    
       
     <section class="px-3 overflow-y-scroll">
@@ -29,8 +34,8 @@
             <h1 class="font-bold text-3xl pb-5">Discover</h1>
             <div>
                 <!-- <i class="fa-solid fa-circle-user text-3xl"></i> -->
-                <button class="border border-white rounded-full px-4 py-2 font-bold hover:bg-white hover:text-black"><a href="/singup
-                    ">Sign up </a></button>
+                <button class="border border-white rounded-full px-4 py-2 font-bold hover:bg-white hover:text-black"><a href="/register
+                    ">Register </a></button>
                 <button class="border border-white  bg-white text-black font-bold rounded-full px-4 py-2 hover:scale-105"><a href="/login">Log in</a></button>
             </div>
         </div>

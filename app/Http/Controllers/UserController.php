@@ -40,4 +40,26 @@ class UserController extends Controller
 
     
     }
+    //show login form
+    public function login()
+    {
+        return view('login');
+    }  
+    //authenticate user
+    public function authenticate(Request $request)
+    {
+        $formFields = $request->validate([
+            'email' => ['required','email'],
+            'password' => 'required',
+        ]);
+        // dd($credentials);
+        if (Auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/Dashboard');
+        }
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.'
+        ])->onlyInput('email');
+    }
+    
 }

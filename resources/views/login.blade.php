@@ -34,9 +34,10 @@
       </p>
   
       <form
-        action=""
+        action="authenticate" method="POST"
         class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
       >
+        @csrf
         <p class="text-center text-lg font-medium">Sign in to your account</p>
   
         <div>
@@ -45,10 +46,16 @@
           <div class="relative">
             <input
               type="email"
+              name="email"
+              value="{{ old('email') }}"
               class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
               placeholder="Enter email"
             />
           </div>
+          @error('email')
+          <div class="text-red-500 mt-2 text-sm">
+            {{ $message }}
+          @enderror
         </div>
   
         <div>
@@ -57,10 +64,16 @@
           <div class="relative">
             <input
               type="password"
+              name="password"
+              value="{{ old('password') }}"
               class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
               placeholder="Enter password"
             />
           </div>
+          @error('password')
+          <div class="text-red-500 mt-2 text-sm">
+            {{ $message }}
+          @enderror
         </div>
   
         <button
@@ -72,7 +85,7 @@
   
         <p class="text-center text-sm text-gray-500">
           No account?
-          <a class="underline" href="">Sign up</a>
+          <a class="underline" href="">Register</a>
         </p>
       </form>
     </div>

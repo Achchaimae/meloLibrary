@@ -49,6 +49,9 @@ Route::get('Playlists', function () {
 Route::get('/register', [UserController::class, 'create']);
 //create new user
 Route::post('/users', [UserController::class, 'store']);
-
+//show login form
+Route::get('/login', [UserController::class, 'login']);
+//login user
+Route::post('authenticate' , [UserController::class, 'authenticate']);
 
 

@@ -54,7 +54,7 @@
             </li>
         </a>
         
-        <a href="#" class="hover:bg-white hover:text-blue-500 p-2 relative top-20">
+        <a href="/logout" class="hover:bg-white hover:text-blue-500 p-2 relative top-20">
         <li>
                 <i class="fa-solid fa-sign-out px-5"></i>
                 Logout

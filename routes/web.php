@@ -19,16 +19,16 @@ Route::get('/', function () {
 });
 Route::get('/artist', function () {
     return view('artist');
-});
+})->middleware(['auth', 'auth:web']);
 Route::get('/album', function () {
     return view('album');
-});
+})->middleware(['auth', 'auth:web']);
 Route::get('/playlist', function () {
     return view('playlist');
-});
-Route::get('/login', function () {
-    return view('login');
-});
+})->middleware(['auth', 'auth:web']);
+// Route::get('/login', function () {
+//     return view('login');
+// })
 // Route::get('/register', function () {
 //     return view('singup');
 // });
@@ -50,7 +50,7 @@ Route::get('/register', [UserController::class, 'create']);
 //create new user
 Route::post('/users', [UserController::class, 'store']);
 //show login form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 //login user
 Route::post('authenticate' , [UserController::class, 'authenticate']);
 //log user out 

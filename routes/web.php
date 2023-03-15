@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,4 +60,12 @@ Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/AddSong', function () {
     return view('Admin/Gestion/AddSong');
 });
+//add new song to database
+Route::post('/NewSong', [AdminController::class, 'Newsong']);
+//show song list
+Route::get('/Dashboard', [AdminController::class, 'songlist']);
+//Edit song
+Route::get('/EditSong/{id}', [AdminController::class, 'EditSong']);
+//Delete song
+Route::delete('/DeleteSong/{id}', [AdminController::class, 'DeleteSong']);
 

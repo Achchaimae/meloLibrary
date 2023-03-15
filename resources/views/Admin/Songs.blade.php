@@ -122,12 +122,17 @@
                 </td>
                 <td class="py-3 px-6 text-center">
                     <div class="flex item-center justify-center">
-                        {{-- <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                             <i class="fa-regular fa-eye"></i>
-                        </div> --}}
-                        <div class="w-4 mr-2 transform hover:text-green-500 hover:scale-110">
-                            <i class="fa-solid fa-pen"></i>
                         </div>
+                        
+                        <form method="POST" action="EditSong/{{$song->id}}/Edit">
+                            @csrf
+                            @method('UPDATE')
+                            <button type="submit" class="w-4 mr-2 transform hover:text-green-500 hover:scale-110">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </form>
                         <form method="POST" action="DeleteSong/{{$song->id}}">
                             @csrf
                             @method('DELETE')

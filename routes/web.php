@@ -61,11 +61,11 @@ Route::get('/AddSong', function () {
     return view('Admin/Gestion/AddSong');
 });
 //add new song to database
-Route::post('/NewSong', [AdminController::class, 'Newsong']);
+Route::post('/Newsong', [AdminController::class, 'Newsong']);
 //show song list
 Route::get('/Dashboard', [AdminController::class, 'songlist']);
-//Edit song
-Route::get('/EditSong/{id}', [AdminController::class, 'EditSong']);
+// show Edit song Form
+Route::get('/EditSong/{id}/edit', [AdminController::class, 'EditSong']);
 //Delete song
 Route::delete('/DeleteSong/{id}', [AdminController::class, 'DeleteSong']);
 

@@ -23,7 +23,7 @@
 <body class="bg-gray-300"  style="background-image: url(./images/addsong.jpg); object-fit:cover;">
     <div class="mx-auto max-w-screen-xl px-4 pb-2 sm:px-6 lg:px-8    ">
         <div class="mx-auto max-w-lg">
-            <form action="/addsong" method="post" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
+            <form action="/Newsong" method="POST" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
                 @csrf
                 
                 {{-- une pièce musicale est définie par son ,  langue(s),date de sortie, paroles, durée, .. --}}
@@ -171,7 +171,7 @@
                     @enderror
                 </div>
                 
-                <div>
+                {{-- <div>
                     <label for="music" >Choose the music's file</label>
             
                     <div class="relative">
@@ -187,7 +187,7 @@
                 </div>
                 @error('music')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                @enderror
+                @enderror --}}
                 
                 <div>
                     <label for="lyrics" >Insert the lyrics of the music</label>

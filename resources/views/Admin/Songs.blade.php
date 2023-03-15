@@ -96,6 +96,9 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($songs as $song)
+           
+           
             <tr class="border-b border-gray-200 hover:bg-gray-100">
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center mr-2">
@@ -104,68 +107,39 @@
                 </td>
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center font-medium">
-                        Be with me
+                        {{ $song->title }}
                     </div>
                 </td>
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center font-medium ">
-                         Oussama Ouafidi
+                        {{ $song->writer }}
                     </div>
                 </td>
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center font-medium">
-                         Oussama Ouafidi
+                        {{ $song->artist }}
                     </div>
                 </td>
                 <td class="py-3 px-6 text-center">
                     <div class="flex item-center justify-center">
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                        {{-- <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                             <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                        </div> --}}
+                        <div class="w-4 mr-2 transform hover:text-green-500 hover:scale-110">
                             <i class="fa-solid fa-pen"></i>
                         </div>
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
+                        <form method="POST" action="DeleteSong/{{$song->id}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </form>
+
                     </div>
                 </td>
             </tr>
-            <tr class="border-b border-gray-200 hover:bg-gray-100">
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center mr-2">
-                            <img src="./images/cover.jpg" alt="musica" class="w-12">
-                    </div>
-                </td>
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center font-medium">
-                        Be with me
-                    </div>
-                </td>
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center font-medium ">
-                         Oussama Ouafidi
-                    </div>
-                </td>
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center font-medium">
-                         Oussama Ouafidi
-                    </div>
-                </td>
-                <td class="py-3 px-6 text-center">
-                    <div class="flex item-center justify-center">
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                            <i class="fa-solid fa-pen"></i>
-                        </div>
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </div>
-                </td>
-            </tr>
+            @endforeach
         </tbody>
    </table>
 </div>

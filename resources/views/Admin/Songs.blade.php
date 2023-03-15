@@ -168,8 +168,10 @@
             </tr>
         </tbody>
    </table>
-      
 </div>
+<button class="bg-blue-200 p-2 px-4 border-solid border-2 relative left-[90%] border-white w-24 mt-4 m-auto text-white drop-shadow-sm shadow-md  rounded-3xl">
+    <a href="/AddSong">Add</a>
+</button>
 </section>
 </body>
 </html>

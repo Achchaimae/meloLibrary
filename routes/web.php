@@ -55,5 +55,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('authenticate' , [UserController::class, 'authenticate']);
 //log user out 
 Route::get('/logout', [UserController::class, 'logout']);
-
+//Add new song
+Route::get('/AddSong', function () {
+    return view('Admin/Gestion/AddSong');
+});
 

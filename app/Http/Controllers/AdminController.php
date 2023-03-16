@@ -65,7 +65,14 @@ class AdminController extends Controller
         $song->release_date = $request->input('release_date');
         $song->duration = $request->input('duration');
         $song->lyrics = $request->input('lyrics');
-        $song->save();
+
+        if($request->hasFile('image')){
+            $formFields['image'] = $request->file('image')->store('images', 'public');
+        }
+        if($request->hasFile('music')){
+            $formFields['music'] = $request->file('music')->store('music', 'public');
+        }
+        $song->update($formFields);
         return redirect('/Dashboard')->with('message', 'You have successfully updated a song');
     }
     //Delete song

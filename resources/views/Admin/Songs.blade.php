@@ -67,7 +67,7 @@
 </aside>
 <section class="bg-indigo-50 w-[85%] p-4">
    <!-- component -->
-   <div class=" shadow-lg w-full my-auto rounded p-4 h-96 ">
+   <div class=" shadow-lg w-full my-auto rounded p-4  ">
  
 <div class='max-w-md mx-auto mb-4'>
     <div class="relative flex items-center w-full h-12 rounded focus-within:shadow-lg bg-white overflow-hidden">
@@ -122,9 +122,7 @@
                 </td>
                 <td class="py-3 px-6 text-center">
                     <div class="flex item-center justify-center">
-                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
+                        
                         <div class="w-4 mr-2 transform hover:text-green-500 hover:scale-110">
                             <a href="/EditSong/{{$song->id}}/edit">
                                 <i class="fa-solid fa-pen"></i>

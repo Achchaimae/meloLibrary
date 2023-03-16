@@ -23,7 +23,7 @@
 <body class="bg-gray-300"  style="background-image: url(./images/addsong.jpg); object-fit:cover;">
     <div class="mx-auto max-w-screen-xl px-4 pb-2 sm:px-6 lg:px-8    ">
         <div class="mx-auto max-w-lg">
-            <form action="/UpdateSong/{{$song->id}}" method="POST" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
+            <form action="/UpdateSong/{{$song->id}}" method="POST"  enctype="multipart/form-data" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
                 @csrf
                 @method('PUT')
                 {{-- une pièce musicale est définie par son ,  langue(s),date de sortie, paroles, durée, .. --}}
@@ -99,7 +99,23 @@
                 @error('tag')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
-                
+                <div>
+                    <label for="image" >Choose a image for the cover</label>
+            
+                    <div class="relative">
+                    <input
+                        type="file"
+                        name="image"
+                        class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
+                       
+                        value="{{old('image')}}"
+                    />
+            
+                    </div>
+                </div>
+                @error('image')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror 
                 <div>
                     <label for="language" >What's the language of the song?</label>
             
@@ -154,7 +170,23 @@
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
-                
+                <div>
+                    <label for="music" >Choose the music's file</label>
+            
+                    <div class="relative">
+                    <input
+                        type="file"
+                        name="music"
+                        class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
+                       
+                        value="{{old('music')}}"
+                    />
+            
+                    </div>
+                </div>
+                @error('music')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror 
                 
                 <div>
                     <label for="lyrics" >Insert the lyrics of the music</label>

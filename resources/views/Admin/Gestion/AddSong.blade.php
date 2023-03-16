@@ -23,7 +23,7 @@
 <body class="bg-gray-300"  style="background-image: url(./images/addsong.jpg); object-fit:cover;">
     <div class="mx-auto max-w-screen-xl px-4 pb-2 sm:px-6 lg:px-8    ">
         <div class="mx-auto max-w-lg">
-            <form action="/Newsong" method="POST" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
+            <form action="/Newsong" method="POST" enctype="multipart/form-data" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
                 @csrf
                 
                 {{-- une pièce musicale est définie par son ,  langue(s),date de sortie, paroles, durée, .. --}}
@@ -99,23 +99,23 @@
                 @error('tag')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
-                {{-- <div>
-                    <label for="cover" >Choose a image for the cover</label>
+                <div>
+                    <label for="image" >Choose a image for the cover</label>
             
                     <div class="relative">
                     <input
                         type="file"
-                        name="cover"
+                        name="image"
                         class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"
                        
-                        value="{{old('cover')}}"
+                        value="{{old('image')}}"
                     />
             
                     </div>
                 </div>
-                @error('cover')
+                @error('image')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                @enderror --}}
+                @enderror 
                 <div>
                     <label for="language" >What's the language of the song?</label>
             

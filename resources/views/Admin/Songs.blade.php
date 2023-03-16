@@ -102,7 +102,7 @@
             <tr class="border-b border-gray-200 hover:bg-gray-100">
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center mr-2">
-                            <img src="./images/cover.jpg" alt="musica" class="w-12">
+                            <img src="{{$song->image ? asset('storage/'.$song->image ) :'./images/cover.jpg'}}" alt="musica" class="w-12 h-12">
                     </div>
                 </td>
                 <td class="py-3 px-6 text-left whitespace-nowrap">

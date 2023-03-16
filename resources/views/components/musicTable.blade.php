@@ -27,7 +27,7 @@
                         {{$music->id}}
                     </td>
                     <td class="flex gap-4 items-center font-bold text-white ">
-                        <img src="./images/cover.jpg" alt="{{$music->title}}" class="musicImg w-14">
+                        <img src="{{$music->image ? asset('storage/'.$music->image ) :'./images/cover.jpg'}}" alt="{{$music->title}}" class="musicImg w-14 h-14">
                         <a href="/singleMusic/{{$music->id}}" class="title hover:underline">{{$music->title}}</a>
                     </td>
                     <td class="album px-6 font-semibold">
@@ -37,7 +37,8 @@
                         {{$music->release_date}}
                     </td>
                     <td class="duration px-6 text-center">
-                        <i id="musicSetting" class="fa-solid fa-ellipsis text-xl cursor-pointer hover:text-white"></i>
+                        <span  class=" cursor-pointer hover:text-white"> {{$music->duration}} </span>
+                        {{-- <i id="musicSetting" class="fa-solid fa-ellipsis text-xl cursor-pointer hover:text-white"></i> --}}
                     </td>
                     <td class="hidden">
                         <audio controls src="" class="audio"></audio>

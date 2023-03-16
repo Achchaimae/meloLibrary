@@ -11,6 +11,7 @@ class AdminController extends Controller
     
     //store new song
     public function Newsong(Request $request){
+        
             $formFields =$request->validate([
                 'title' => ['required', 'min:3', 'max:255'],
                 'artist' => ['required', 'min:3', 'max:255'],
@@ -18,11 +19,16 @@ class AdminController extends Controller
                 'tag' => ['required', 'min:3', 'max:255'],
                 'language' =>'required', 
                 'release_date' => ['required', 'min:3', 'max:255'],
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'duration' => ['required', 'min:3', 'max:255'],
                 'lyrics' => 'required',
 
 
             ]);
+
+            if($request->hasFile('image')){
+                $formFields['image'] = $request->file('image')->store('images', 'public');
+            }
         Song::create($formFields);
      return redirect('/Dashboard')->with('message', 'You have successfully added a song');
     }

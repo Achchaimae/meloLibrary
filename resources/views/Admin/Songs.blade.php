@@ -125,14 +125,12 @@
                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                             <i class="fa-regular fa-eye"></i>
                         </div>
-                        
-                        <form method="POST" action="EditSong/{{$song->id}}/Edit">
-                            @csrf
-                            @method('UPDATE')
-                            <button type="submit" class="w-4 mr-2 transform hover:text-green-500 hover:scale-110">
+                        <div class="w-4 mr-2 transform hover:text-green-500 hover:scale-110">
+                            <a href="/EditSong/{{$song->id}}/edit">
                                 <i class="fa-solid fa-pen"></i>
-                            </button>
-                        </form>
+                            </a>
+                        </div>
+                       
                         <form method="POST" action="DeleteSong/{{$song->id}}">
                             @csrf
                             @method('DELETE')

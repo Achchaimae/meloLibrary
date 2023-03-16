@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SongsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +23,10 @@ Route::get('/', function () {
 Route::get('/artist', function () {
     return view('artist');
 })->middleware(['auth', 'auth:web']);
-Route::get('/album', function () {
-    return view('album');
-})->middleware(['auth', 'auth:web']);
+
+Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'auth:web']);
+
+
 Route::get('/playlist', function () {
     return view('playlist');
 })->middleware(['auth', 'auth:web']);
@@ -66,6 +69,11 @@ Route::post('/Newsong', [AdminController::class, 'Newsong']);
 Route::get('/Dashboard', [AdminController::class, 'songlist']);
 // show Edit song Form
 Route::get('/EditSong/{id}/edit', [AdminController::class, 'EditSong']);
+
+//Edit Submit song
+Route::put('/UpdateSong/{id}', [AdminController::class, 'UpdateSong']);
+
 //Delete song
 Route::delete('/DeleteSong/{id}', [AdminController::class, 'DeleteSong']);
+
 

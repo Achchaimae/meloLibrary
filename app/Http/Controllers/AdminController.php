@@ -32,15 +32,31 @@ class AdminController extends Controller
         $songs = Song::all();
         return view('/Admin/Songs', ['songs' => $songs]);
     }
-    //show Edit song form
-    public function EditSongForm($id){
-        $song = Song::find($id);
-        return view('/Admin/EditSong', ['song' => $song]);
-    }
+    // //show Edit song form
+    // public function EditSongForm($id){
+    //     $song = Song::find($id);
+    //     return view('/Admin/EditSong', ['song' => $song]);
+    // }
     //Edit song
     public function EditSong($id){
         $song = Song::find($id);
-        return view('/Admin/EditSong', ['song' => $song]);
+     return view('/Admin/Gestion/UpdateSong', ['song' => $song]);
+        
+    }
+    //Update song
+    public function UpdateSong(Request $request, $id){
+        
+        $song = Song::find($id);
+        $song->title = $request->input('title');
+        $song->artist = $request->input('artist');
+        $song->writer = $request->input('writer');
+        $song->tag = $request->input('tag');
+        $song->language = $request->input('language');
+        $song->release_date = $request->input('release_date');
+        $song->duration = $request->input('duration');
+        $song->lyrics = $request->input('lyrics');
+        $song->save();
+        return redirect('/Dashboard')->with('message', 'You have successfully updated a song');
     }
     //Delete song
     public function DeleteSong($id){

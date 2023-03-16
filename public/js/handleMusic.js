@@ -1,6 +1,7 @@
 
 // all music on table
-let music = document.querySelectorAll('.music');
+let music = document.querySelectorAll('.musicTable');
+
 
 // music footer bar
 let footer = document.getElementById('footer');

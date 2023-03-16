@@ -41,7 +41,7 @@
                         {{-- <i id="musicSetting" class="fa-solid fa-ellipsis text-xl cursor-pointer hover:text-white"></i> --}}
                     </td>
                     <td class="hidden">
-                        <audio controls src="" class="audio"></audio>
+                        <audio controls src="{{asset('storage/'.$music->music)}}" class="audio"></audio>
                     </td>
                 </tr>
             @endforeach

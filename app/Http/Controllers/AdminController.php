@@ -22,12 +22,16 @@ class AdminController extends Controller
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'duration' => ['required', 'min:3', 'max:255'],
                 'lyrics' => 'required',
+                'music' => 'required|mimes:mpga,wav,mp3,mp4,ogg,webm,3gp,mov,flv,avi,wmv,ts',
 
 
             ]);
 
             if($request->hasFile('image')){
                 $formFields['image'] = $request->file('image')->store('images', 'public');
+            }
+            if($request->hasFile('music')){
+                $formFields['music'] = $request->file('music')->store('music', 'public');
             }
         Song::create($formFields);
      return redirect('/Dashboard')->with('message', 'You have successfully added a song');

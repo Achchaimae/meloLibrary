@@ -102,31 +102,10 @@
                 </button>
             </div>
         </div>
-        <div class="absolute bottom-0 right-4  h-24  justify-center w-full flex items-center bg-[#058ED9]">
-            <div class="flex">
-                <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" class="w-[50px] rounded  ml-5" alt="">
-                <div class="flex flex-col ml-5">
-                    <h1 class="font-normal text-m">SONG NAME</h1>
-                    <h2 class="text-gray-300 text-sm opacity-40">ARTIST NAME</h2>
-                </div>
-            </div>
-            <i class="fa-solid fa-backward-step ml-5 text-2xl"></i>
-            <button>
-                <i class="fa-solid fa-circle-play ml-5 text-3xl"></i>
-            </button>
-            <i class="fa-solid fa-forward-step ml-5 text-2xl"></i>
-            <div class=" w-[500px] bg-gray-200 ml-5 rounded-full h-2 dark:bg-gray-700">
-                <div class="bg-white h-2 rounded-full" style="width: 45%"></div>
-            </div>
-            <i class="fa-solid fa-rotate-left text-xl ml-5 px-2"></i>
-            <div class="flex relative  items-center ">
-                <i class="fa-solid fa-volume-high text-xl mr-3"></i>
-                <input id="default-range" type="range" min="0" max="100 "  value="50" class="w-full h-1 bg-red-400 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700">
-            </div>
-        </div>
+       
     </section>
     @endsection
-
     
 </body>
+
 </html>

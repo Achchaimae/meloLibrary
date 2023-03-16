@@ -77,6 +77,7 @@
                     <p>Artist</p>
                 </div>
             </div>
+            
             <div class="bg-gray-500 p-4 w-[30%] rounded flex  justify-around">
                 <img src="./images/LM9AWED.png" alt="Artist" class="w-20 rounded ">
                 <div class="flex flex-col">

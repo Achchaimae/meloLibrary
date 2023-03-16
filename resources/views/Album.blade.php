@@ -24,71 +24,15 @@
         <div>
             <h1 class="text-3xl font-bold m-2">Albums</h1>
             <div class=" w-full  flex justify-between gap-2 p pb-44 pt-4 flex-wrap">
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-    
-                <div class="bg-blue-300 rounded w-60 h-60 p-4 ">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="abs
-                    ">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-
-                <div class="bg-blue-300 rounded w-60 h-60 p-4 ">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="abs
-                    ">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-    
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
-                <div class="bg-blue-300 rounded w-60 h-60 p-4">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                    <button class=" relative bottom-12 left-40  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button>
-                </div>
+                <x-musicTable :songs=$songs />
             </div>
-            
         </div>
     </section>
     @endsection
 
+    <x-footer />
+
      
 </body>
+<script src="{{asset('js/handleMusic.js')}}" defer></script>
 </html>

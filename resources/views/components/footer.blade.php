@@ -70,3 +70,4 @@
         <i class="fa-solid fa-volume-high cursor-pointer" id="unmute"></i>
     </div>
 </footer>
+

@@ -21,10 +21,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($songs as $music)
+            @foreach ($songs  as $key => $music)
                 <tr class="musicTable bg-transparent hover:bg-gray-200/20 cursor-pointer">
                     <td class="px-6">
-                        {{$music->id}}
+                        {{$key +1}}
                     </td>
                     <td class="flex gap-4 items-center font-bold text-white ">
                         <img src="{{$music->image ? asset('storage/'.$music->image ) :'./images/cover.jpg'}}" alt="{{$music->title}}" class="musicImg w-14 h-14">

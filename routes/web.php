@@ -91,6 +91,10 @@ Route::get('/EditPlaylist/{id}', [PlaylistController::class, 'EditPlaylist']);
 Route::get('/DeletePlaylist/{id}', [PlaylistController::class, 'DeletePlaylist']);
 //Update playlist
 Route::put('/UpdatePlaylist/{id}', [PlaylistController::class, 'UpdatePlaylist']);
+//Add new Band
+Route::get('/AddBand', function () {
+    return view('Admin/BandGestion/AddBand');
+});
 
 
 

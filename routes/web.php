@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BandController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
@@ -95,6 +96,8 @@ Route::put('/UpdatePlaylist/{id}', [PlaylistController::class, 'UpdatePlaylist']
 Route::get('/AddBand', function () {
     return view('Admin/BandGestion/AddBand');
 });
+//Add new Band to database
+Route::post('/NewBand', [BandController::class, 'NewBand']);
 
 
 

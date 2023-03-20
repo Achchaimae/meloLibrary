@@ -42,8 +42,10 @@
             </div>
         </div>
         <div class="flex justify-between flex-wrap  gap-4 p-4 rounded">
-            <div class="bg-gray-700  text-white w-60 h-60 p-8  rounded  flex flex-col justify-around items-center">
-                <i class="fa-solid fa-plus text-2xl "></i>
+            <div class="bg-gray-700  text-white w-60 h-60 p-8  rounded  flex flex-col justify-around items-center">  
+                <a href="/AddBand">
+                    <i class="fa-solid fa-plus text-2xl "></i>
+                </a>
             </div>
             <div class="bg-gray-700  text-white w-60 h-60 p-4  rounded  flex flex-col justify-around items-center group/item ">
                 <div class="flex relative flex-wrap z-1 justify-center items-center group/edit group-hover/item:scale-110 group-hover/item:opacity-30 ">

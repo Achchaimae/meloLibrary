@@ -20,7 +20,7 @@
     <div class="mx-auto max-w-screen-xl px-4 pb-2 sm:px-6 lg:px-8    ">
         <div class="mx-auto max-w-lg">
             <h1 class="text-white text-center font-extrabold text-2xl">Add New Band</h1>
-            <form action="#" method="post"  enctype="multipart/form-data" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
+            <form action="/NewBand" method="post"  enctype="multipart/form-data" class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-white bg-opacity-90">
                 @csrf
                 <label for="image" >insert an image for the band</label>
                 <input type="file" name="image" id="image" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12">

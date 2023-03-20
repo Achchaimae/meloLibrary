@@ -25,62 +25,46 @@
         <h1 class="text-3xl font-bold m-2">Playlist</h1>
         <div class="mt-6  w-full  flex justify-between gap-2 p pb-44 pt-4 flex-wrap">
             <div class="bg-[#058ED9] text-white w-60 h-60 p-8  rounded  flex flex-col justify-around items-center">
-                <i class="fa-solid fa-plus text-2xl "></i>
+                <a href="/AddPlaylist">
+                     <i class="fa-solid fa-plus text-2xl "></i>
+                </a>
+               
             </div>
+            @foreach ($playlists as $playlist)
+            {{-- {{$playlist->image}} --}}
             <div class="bg-[#058ED9] rounded w-60 h-60 p-4 ">
-                <div class="grid grid-cols-2 ">
-                    <img src="./images/cover.jpg" alt="playlist image"  class="w-22">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22" > 
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22">
-                    <img src="./images/cover.jpg" alt="playlist image" class="w-22" >
+                    <img src="{{asset('storage/'.$playlist->image ) }}" alt="playlist image relative" >
+                   
+                        <i   class="fa-solid fa-ellipsis text-white z-10 font-bold text-2xl absolute right-7 top-20  " onclick="toggle()"></i>
+                    <div class=" absolute right-7 top-28 ">
+                        <div id="myDIV" class="flex flex-col hidden ">
+                            <a href="/EditPlaylist/{{$playlist->id}}">
+                                <i class="fa-solid fa-edit text-white z-10  text-2xl  right-7 top-20  "></i>
+                            </a>
+                            <a href="/DeletePlaylist/{{$playlist->id}}">
+                                <i class="fa-solid fa-trash text-white z-10  text-2xl  right-7 top-20  "></i>
+                            </a>
+                        </div>
+                    </div>
 
-                </div>
-                
                 <button class=" relative bottom-12 left-40  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
                     <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
                 </button>
             </div>
-            <div class="bg-[#058ED9] rounded w-60 h-60 p-4 ">
-                <div class="grid grid-cols-2 ">
-                    <img src="./images/cover.jpg" alt="playlist image"  class="w-22">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22" > 
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22">
-                    <img src="./images/cover.jpg" alt="playlist image" class="w-22" >
-
-                </div>
-                
-                <button class=" relative bottom-12 left-40  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
-                    <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                </button>
-            </div>
-            <div class="bg-[#058ED9] rounded w-60 h-60 p-4 ">
-                <div class="grid grid-cols-2 ">
-                    <img src="./images/cover.jpg" alt="playlist image"  class="w-22">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22" > 
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22">
-                    <img src="./images/cover.jpg" alt="playlist image" class="w-22" >
-
-                </div>
-                
-                <button class=" relative bottom-12 left-40  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
-                    <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                </button>
-            </div>
-            <div class="bg-[#058ED9] rounded w-60 h-60 p-4 ">
-                <div class="grid grid-cols-2 ">
-                    <img src="./images/cover.jpg" alt="playlist image"  class="w-22">
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22" > 
-                    <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="w-22">
-                    <img src="./images/cover.jpg" alt="playlist image" class="w-22" >
-
-                </div>
-                
-                <button class=" relative bottom-12 left-40  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
-                    <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                </button>
-            </div>
+           
+            @endforeach
+           
+           
         </div>
     </section>
     @endsection
 </body>
 </html>
+<script>
+    function toggle() {
+   var element = document.getElementById("myDIV");
+   var option = document.getElementById("option");
+   element.classList.toggle("hidden");
+    option.classList.toggle("fa-ellipsis");
+}
+</script>

@@ -42,11 +42,7 @@ class AdminController extends Controller
         $songs = Song::all();
         return view('/Admin/Songs', ['songs' => $songs]);
     }
-    // //show Edit song form
-    // public function EditSongForm($id){
-    //     $song = Song::find($id);
-    //     return view('/Admin/EditSong', ['song' => $song]);
-    // }
+    
     //Edit song
     public function EditSong($id){
         $song = Song::find($id);

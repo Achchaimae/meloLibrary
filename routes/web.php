@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SongsController;
+use App\Http\Controllers\PlaylistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,9 @@ Route::get('/artist', function () {
 Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'auth:web']);
 
 
-Route::get('/playlist', function () {
-    return view('playlist');
-})->middleware(['auth', 'auth:web']);
+// Route::get('/playlist', function () {
+//     return view('playlist');
+// })->middleware(['auth', 'auth:web']);
 // Route::get('/login', function () {
 //     return view('login');
 // })
@@ -75,5 +76,23 @@ Route::put('/UpdateSong/{id}', [AdminController::class, 'UpdateSong']);
 
 //Delete song
 Route::delete('/DeleteSong/{id}', [AdminController::class, 'DeleteSong']);
+//Add New Playlist
+Route::get('/AddPlaylist', function () {
+    return view('/GestionUser/AddPlaylist');
+});
+
+//Add new playlist to database
+Route::post('/Newplaylist', [PlaylistController::class, 'NewPlaylist']);
+//show playlist list
+Route::get('/playlist', [PlaylistController::class, 'showplaylist'])->middleware(['auth', 'auth:web']);
+//show Edit playlist Form
+Route::get('/EditPlaylist/{id}', [PlaylistController::class, 'EditPlaylist']);
+//delete playlist
+Route::get('/DeletePlaylist/{id}', [PlaylistController::class, 'DeletePlaylist']);
+//Update playlist
+Route::put('/UpdatePlaylist/{id}', [PlaylistController::class, 'UpdatePlaylist']);
+
+
+
 
 

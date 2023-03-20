@@ -21,50 +21,8 @@
     <title>Dashboard</title>
 </head>
 <body class="flex w-full h-screen fixed scroll-smooth ">
-<aside class="bg-gray-900  w-[15%] flex flex-col items-center text-white  ">
-    <div class="px-5 py-3 flex flex-col justify-center items-center">
-        <img src="./images/LM9AWED.png" class="w-20 h-20 rounded-full border-4 border-green-500 " alt="">
-        <div class="font-[lobster]">Achchaimae Khalaf</div>
-        <div class="text-sm">Admin</div>
-    </div>
-    <ul class="w-full flex h-96 flex-col place-content-evenly">
-        <a href="/Dashboard" class="hover:bg-white hover:text-blue-500 p-2 ">
-            <li>
-                <i class="fa-solid fa-music px-5"></i>
-                Songs
-            </li>
-        </a>
-        <a href="/Comments" class="hover:bg-white hover:text-blue-500 p-2 ">
-            <li>
-                <i class="fa-regular fa-comment px-5"></i>
-                Comments
-            
-            </li>
-        </a>
-        <a href="/Bands" class="hover:bg-white hover:text-blue-500 p-2 ">
-            <li>
-                <i class="fa-solid fa-users px-5"></i>
-                Bands
-            </li>
-        </a>
-        <a href="/Playlists" class="hover:bg-white hover:text-blue-500 p-2 " >
-            <li>
-                <i class="fa-solid fa-music px-5"></i>
-                Playlist
-            </li>
-        </a>
-        
-        <a href="/logout" class="hover:bg-white hover:text-blue-500 p-2 relative top-20">
-            <li>
-                    <i class="fa-solid fa-sign-out px-5"></i>
-                    Logout
-            </li>
-        </a>
-        
-        
-    </ul>
-    
-</aside>
+    @extends('layouts.AdminNav')
+    @section('content')
 <section class="bg-indigo-50 w-[85%] p-4">
    <!-- component -->
    <div class=" shadow-lg w-full my-auto rounded p-4 h-auto ">
@@ -84,40 +42,9 @@
             </div>
         </div>
         <div class="flex justify-between flex-wrap  gap-4 p-4 rounded">
-            {{-- <div class="bg-gray-700  text-white w-56 h-56 p-4  rounded  flex flex-col justify-around items-center">
-                <i class="fa-solid fa-plus text-2xl "></i>
-            </div> --}}
             <div class="bg-gray-700  text-white w-60 h-60 p-8  rounded  flex flex-col justify-around items-center">
                 <i class="fa-solid fa-plus text-2xl "></i>
             </div>
-            {{-- <div class="bg-gray-700  text-white w-56 h-56 p-4  rounded  flex flex-col justify-around items-center">
-                <img src="./images/band.jpg" alt="band cover" class="w-40 ">
-                <div class="text-center">
-                    <div class="font-bold text-xl">Band Name</div>
-                    <div class="text-sm">Band Description</div>
-                </div>
-            </div> --}}
-            {{-- <div class="bg-gray-700  text-white w-56 h-56 p-4  rounded  flex flex-col justify-around items-center">
-                <img src="./images/band.jpg" alt="band cover" class="w-40">
-                <div class="text-center">
-                    <div class="font-bold text-xl">Band Name</div>
-                    <div class="text-sm">Band Description</div>
-                </div>
-            </div>
-            <div class="bg-gray-700  text-white w-56 h-56 p-4  rounded  flex flex-col justify-around items-center">
-                <img src="./images/band.jpg" alt="band cover" class="w-40">
-                <div class="text-center">
-                    <div class="font-bold text-xl">Band Name</div>
-                    <div class="text-sm">Band Description</div>
-                </div>
-            </div> --}}
-            {{-- <div class="bg-gray-700  text-white w-56 h-56 p-4  rounded  flex flex-col justify-around items-center">
-                <img src="./images/band.jpg" alt="band cover" class="w-40">
-                <div class="text-center">
-                    <div class="font-bold text-xl">Band Name</div>
-                    <div class="text-sm">Band Description</div>
-                </div>
-            </div> --}}
             <div class="bg-gray-700  text-white w-60 h-60 p-4  rounded  flex flex-col justify-around items-center group/item ">
                 <div class="flex relative flex-wrap z-1 justify-center items-center group/edit group-hover/item:scale-110 group-hover/item:opacity-30 ">
                     <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
@@ -181,10 +108,8 @@
            </div>
             
         </div>
-
-   
-      
 </div>
 </section>
+@endsection
 </body>
 </html>

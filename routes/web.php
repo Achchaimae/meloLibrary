@@ -46,7 +46,7 @@ Route::get('Comments', function () {
 Route::get('Bands', function () {
     return view('Admin/Bands');
 });
-Route::get('Playlists', function () {
+Route::get('Artists', function () {
     return view('Admin/playlist');
 });
 

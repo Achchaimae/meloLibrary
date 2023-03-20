@@ -47,67 +47,30 @@
                     <i class="fa-solid fa-plus text-2xl "></i>
                 </a>
             </div>
+            @foreach ($bands as $band)
             <div class="bg-gray-700  text-white w-60 h-60 p-4  rounded  flex flex-col justify-around items-center group/item ">
                 <div class="flex relative flex-wrap z-1 justify-center items-center group/edit group-hover/item:scale-110 group-hover/item:opacity-30 ">
-                    <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
-                    <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                    <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                    <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
+                    <img src="{{$band->image ? asset('storage/'.$band->image ) :'./images/cover.jpg'}}" alt="band" >
+                    
                 </div>
                 <div class="text-center z-10 group/edit group-hover/item:hidden ">
-                    <div class="font-bold text-xl">Happy</div>
+                    <div class="font-bold text-xl">{{$band->name}}</div>
                 </div>
                 <div class=" justify-between items-center gap-4 z-10 m-auto absolute hidden group/edit group-hover/item:block ">
-                   <i class="fa-solid fa-trash-can bg-gray-700 p-2 rounded-full"></i>
-                   <i class="fa-solid fa-edit bg-gray-700 p-2 rounded-full"></i>
+                    <a href="/DeleteBand/{{$band->id}}">
+                        <i class="fa-solid fa-trash bg-gray-700 p-2 rounded-full"></i>
+                    </a>
+                    <a href="/EditBand/{{$band->id}}">
+                        <i class="fa-solid fa-edit bg-gray-700 p-2 rounded-full"></i>
+                    </a>
+                 
                 </div>
             </div>
-            <div class="bg-gray-700  text-white w-60 h-60 p-4  rounded  flex flex-col justify-around items-center group/item ">
-               <div class="flex relative flex-wrap z-1 justify-center items-center group/edit group-hover/item:scale-110 group-hover/item:opacity-30 ">
-                   <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
-                   <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                   <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                   <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
-               </div>
-               <div class="text-center z-10 group/edit group-hover/item:hidden ">
-                   <div class="font-bold text-xl">Sad</div>
-               </div>
-               <div class=" justify-between items-center gap-4 z-10 m-auto absolute hidden group/edit group-hover/item:block ">
-                  <i class="fa-solid fa-trash-can bg-gray-700 p-2 rounded-full"></i>
-                  <i class="fa-solid fa-edit bg-gray-700 p-2 rounded-full"></i>
-               </div>
-           </div>
+            @endforeach
             
-           <div class="bg-gray-700  text-white w-60 h-60 p-4  rounded  flex flex-col justify-around items-center group/item ">
-               <div class="flex relative flex-wrap z-1 justify-center items-center group/edit group-hover/item:scale-110 group-hover/item:opacity-30 ">
-                   <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
-                   <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                   <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                   <img src="./images/band.jpg" alt="playlist" class="w-24 h-24">
-               </div>
-               <div class="text-center z-10 group/edit group-hover/item:hidden ">
-                   <div class="font-bold text-xl">Chill</div>
-               </div>
-               <div class=" justify-between items-center gap-4 z-10 m-auto absolute hidden group/edit group-hover/item:block ">
-                  <i class="fa-solid fa-trash-can bg-gray-700 p-2 rounded-full"></i>
-                  <i class="fa-solid fa-edit bg-gray-700 p-2 rounded-full"></i>
-               </div>
-           </div>
-           <div class="bg-gray-700  text-white w-60 h-60 p-4  rounded  flex flex-col justify-around items-center group/item ">
-               <div class="flex relative flex-wrap z-1 justify-center items-center group/edit group-hover/item:scale-110 group-hover/item:opacity-30 ">
-                   <img src="./images/band.jpg" alt="playlist" class="">
-                   {{-- <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                   <img src="./images/cover.jpg" alt="" class="w-24 h-24">
-                   <img src="./images/band.jpg" alt="playlist" class="w-24 h-24"> --}}
-               </div>
-               <div class="text-center z-10 group/edit group-hover/item:hidden ">
-                   <div class="font-bold text-xl">Gaming</div>
-               </div>
-               <div class=" justify-between items-center gap-4 z-10 m-auto absolute hidden group/edit group-hover/item:block ">
-                  <i class="fa-solid fa-trash-can bg-gray-700 p-2 rounded-full"></i>
-                  <i class="fa-solid fa-edit bg-gray-700 p-2 rounded-full"></i>
-               </div>
-           </div>
+            
+          
+          
             
         </div>
 </div>

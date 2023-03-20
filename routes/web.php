@@ -44,9 +44,9 @@ Route::get('/Dashboard', function () {
 Route::get('Comments', function () {
     return view('Admin/Comments');
 });
-Route::get('Bands', function () {
-    return view('Admin/Bands');
-});
+// Route::get('Bands', function () {
+//     return view('Admin/Bands');
+// });
 Route::get('Artists', function () {
     return view('Admin/playlist');
 });
@@ -81,7 +81,8 @@ Route::delete('/DeleteSong/{id}', [AdminController::class, 'DeleteSong']);
 Route::get('/AddPlaylist', function () {
     return view('/GestionUser/AddPlaylist');
 });
-
+//show bands list
+Route::get('/Bands', [BandController::class, 'showbands'])->middleware(['auth', 'auth:web']);
 //Add new playlist to database
 Route::post('/Newplaylist', [PlaylistController::class, 'NewPlaylist']);
 //show playlist list
@@ -98,6 +99,12 @@ Route::get('/AddBand', function () {
 });
 //Add new Band to database
 Route::post('/NewBand', [BandController::class, 'NewBand']);
+//delete band
+Route::get('/DeleteBand/{id}', [BandController::class, 'DeleteBand']);
+// edit band
+Route::get('/EditBand/{id}', [BandController::class, 'EditBand']);
+//update band
+Route::put('/UpdateBand/{id}', [BandController::class, 'UpdateBand']);
 
 
 

@@ -10,8 +10,9 @@ class Band extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'genre',
+        'members',
+        'release_date',
+        'country',
         'image',
-        'description',
     ];
 }

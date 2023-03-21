@@ -22,10 +22,11 @@ use App\Http\Controllers\PlaylistController;
 //home page
 // Route::get('/', function () { return view('index'); });
 Route::get('/', [SongsController::class, 'songlist'],);
-Route::get('/artist', function () {
-    return view('artist');
-})->middleware(['auth', 'auth:web']);
+// Route::get('/artist', function () {
+//     return view('artist');
 
+// })->middleware(['auth', 'auth:web']);
+Route::get('/artist', [ArtistController::class, 'listArtists'])->middleware(['auth', 'auth:web']);
 Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'auth:web']);
 //dashboard page
 Route::get('/Dashboard', function () {

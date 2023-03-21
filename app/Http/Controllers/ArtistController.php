@@ -58,4 +58,11 @@ class ArtistController extends Controller
         $artist->update($formFields);
         return redirect('/Artists')->with('message', 'You have successfully updated an artist');
     }
+    //show artist
+    public function  listArtists()
+    {
+        $Artistslist = DB::table('artists')->get();
+        $artists = artist::all();
+        return view('/artist', ['artists' => $artists]);
+    }
 }

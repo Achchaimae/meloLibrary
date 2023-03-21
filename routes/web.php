@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SongsController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\PlaylistController;
 
 /*
@@ -47,9 +48,9 @@ Route::get('Comments', function () {
 // Route::get('Bands', function () {
 //     return view('Admin/Bands');
 // });
-Route::get('Artists', function () {
-    return view('Admin/playlist');
-});
+// Route::get('Artists', function () {
+//     return view('Admin/Artist');
+// });
 
 //show register/create form
 Route::get('/register', [UserController::class, 'create']);
@@ -105,6 +106,21 @@ Route::get('/DeleteBand/{id}', [BandController::class, 'DeleteBand']);
 Route::get('/EditBand/{id}', [BandController::class, 'EditBand']);
 //update band
 Route::put('/UpdateBand/{id}', [BandController::class, 'UpdateBand']);
+//add  new artist
+Route::get('/AddArtist', function () {
+    return view('Admin/ArtistGestion/AddArtist');
+});
+//add new artist to database
+Route::post('/NewArtist', [ArtistController::class, 'NewArtist']);
+//show artist list
+Route::get('/Artists', [ArtistController::class, 'showArtists']);
+//delete artist
+Route::get('/DeleteArtist/{id}', [ArtistController::class, 'DeleteArtist']);
+//edit artist
+Route::get('/EditArtist/{id}', [ArtistController::class, 'EditArtist']);
+//update artist
+Route::post('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
+
 
 
 

@@ -31,7 +31,7 @@
             </div>
         </div>
         
-        <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5">Recently played</h2>
+        <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5">Artists</h2>
         <div class="flex flex-wrap">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-5 ">
                 <div class="flex flex-col justify-center h-64 w-fit p-4 items-center bg-[#058ED9] rounded ">

@@ -30,7 +30,7 @@
                 </a>
                
             </div>
-            @foreach ($playlists as $playlist)
+            @foreach ($playlist as $playlist)
             {{-- {{$playlist->image}} --}}
             <div class="bg-[#058ED9] rounded w-60 h-60 p-4 ">
                     <img src="{{asset('storage/'.$playlist->image ) }}" alt="playlist image relative" >

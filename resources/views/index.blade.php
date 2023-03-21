@@ -43,31 +43,18 @@
         <div >
             <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5">Recently played</h2>
             <div class="flex  px-5 space-x-5 ">
-                <div >
-                    <img src="./images/cover.jpg" class="w-[200px] h-[200px] rounded" alt="">
-                    <h2 class="font-semibold text-lg">SONG NAME</h2>
-                    <h3 class="text-gray-300 font-bold text-sm opacity-40">Artist Name</h3>
-                </div>
-                <div class="">
-                    <img src="./images/cover.jpg" class="w-[200px] h-[200px] rounded" alt="">
-                    <h2 class="font-semibold text-lg">SONG NAME</h2>
-                    <h3 class="text-gray-300 font-bold text-sm opacity-40">Artist Name</h3>
-                </div>
-                <div >
-                    <img src="./images/cover.jpg" class="w-[200px] h-[200px] rounded" alt="">
-                    <h2 class="font-semibold text-lg">SONG NAME</h2>
-                    <h3 class="text-gray-300 font-bold text-sm opacity-40">Artist Name</h3>
-                </div>
-                <div >
-                    <img src="./images/cover.jpg" class="w-[200px] h-[200px] rounded" alt="">
-                    <h2 class="font-semibold text-lg">SONG NAME</h2>
-                    <h3 class="text-gray-300 font-bold text-sm opacity-40">Artist Name</h3>
-                </div>
-                <div >
-                    <img src="./images/cover.jpg" class="w-[200px] h-[200px] rounded" alt="">
-                    <h2 class="font-semibold text-lg">SONG NAME</h2>
-                    <h3 class="text-gray-300 font-bold text-sm opacity-40">Artist Name</h3>
-                </div>
+                @foreach ($songs as  $key => $song)
+                @if ($key < 5)
+                    <div >
+                        <img src="{{$song->image ? asset('storage/'.$song->image ) :'./images/cover.jpg'}}" class="w-[200px] h-[200px] rounded" alt="">
+                        <h2 class="font-semibold text-lg">{{$song->title}}</h2>
+                        <h3 class="text-gray-300 font-bold text-sm opacity-40">{{$song->artist}}</h3>
+                    </div>
+                @else
+                    @break
+                @endif
+                @endforeach
+               
                 
                
             </div>
@@ -81,26 +68,7 @@
                 </button>
             </div>
 
-            <div class="bg-gray-700  rounded w-60 h-60 p-4 ">
-                <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image" class="abs
-                ">
-                <button class=" relative bottom-12 left-40  ">
-                    <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                </button>
-            </div>
-
-            <div class="bg-gray-700  rounded w-60 h-60 p-4">
-                <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                <button class=" relative bottom-12 left-40  ">
-                    <i class="fa-solid fa-circle-play text-4xltext-[#058ED9]"></i>
-                </button>
-            </div>
-            <div class="bg-gray-700  rounded w-60 h-60 p-4">
-                <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                <button class=" relative bottom-12 left-40  ">
-                    <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                </button>
-            </div>
+          
         </div>
        
     </section>

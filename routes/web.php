@@ -19,39 +19,21 @@ use App\Http\Controllers\PlaylistController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
-});
+//home page
+// Route::get('/', function () { return view('index'); });
+Route::get('/', [SongsController::class, 'songlist'],);
 Route::get('/artist', function () {
     return view('artist');
 })->middleware(['auth', 'auth:web']);
 
 Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'auth:web']);
-
-
-// Route::get('/playlist', function () {
-//     return view('playlist');
-// })->middleware(['auth', 'auth:web']);
-// Route::get('/login', function () {
-//     return view('login');
-// })
-// Route::get('/register', function () {
-//     return view('singup');
-// });
+//dashboard page
 Route::get('/Dashboard', function () {
     return view('Admin/Songs');
 });
 Route::get('Comments', function () {
     return view('Admin/Comments');
 });
-// Route::get('Bands', function () {
-//     return view('Admin/Bands');
-// });
-// Route::get('Artists', function () {
-//     return view('Admin/Artist');
-// });
-
 //show register/create form
 Route::get('/register', [UserController::class, 'create']);
 //create new user

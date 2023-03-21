@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <!-- tailwind link -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,6 +21,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css'>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>MeloLobrary</title>
+    <livewire:styles />
+    <livewire:scripts />
 </head>
 <body class="grid grid-cols-[auto_1fr]  text-white h-screen fixed scroll-smooth w-full" style="background-color: black;">
     @extends('layouts.Nav')
@@ -27,9 +30,10 @@
 
     
     <x-flash-message />
-   
+ 
       
     <section class="px-3 overflow-y-scroll">
+        
         <div class="flex justify-between items-center">
             <h1 class="font-bold text-3xl pb-5">Discover</h1>
             <div>
@@ -40,6 +44,7 @@
             </div>
         </div>
         
+        @livewire('songs-search')
         <div >
             <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5">Recently played</h2>
             <div class="flex  px-5 space-x-5 ">
@@ -59,7 +64,7 @@
                
             </div>
         </div>
-        <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5 py-2">Random You May Like</h2>
+        {{-- <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5 py-2">Random You May Like</h2>
         <div class=" w-full  flex justify-around  pb-44">
             <div class="bg-gray-700  rounded w-60 h-60 p-4">
                 <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
@@ -67,9 +72,9 @@
                     <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
                 </button>
             </div>
-
-          
-        </div>
+            
+        </div> --}}
+       
        
     </section>
     @endsection

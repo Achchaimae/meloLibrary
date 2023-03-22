@@ -15,12 +15,16 @@
     <link rel="stylesheet" href="./css/style.css">
      <!-- icon link -->
     <link rel="icon" href="images/header.svg" type="image/icon type">
+    <livewire:styles />
+    <livewire:scripts />
     <title>MeloLobrary</title>
 </head>
 <body class="grid grid-cols-[auto_1fr]  text-white h-screen fixed scroll-smooth w-full" style="background-color: black;">
     @extends('layouts.Nav')
     @section('content')
+   
     <section class=" p-2 w-full overflow-y-scroll ">
+        @livewire('search')
         <div>
             <h1 class="text-3xl font-bold m-2">Albums</h1>
             <div class=" w-full  flex justify-between gap-2 p pb-44 pt-4 flex-wrap">

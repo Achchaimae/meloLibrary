@@ -22,8 +22,8 @@ use App\Http\Controllers\PlaylistController;
 //home page
 // Route::get('/', function () { return view('index'); });
 Route::get('/', [SongsController::class, 'songlist'],);
-// Route::get('/artist', function () {
-//     return view('artist');
+// show single music
+Route::get('/singleMusic/{id}', [SongsController::class, 'SingleMusic']);
 
 // })->middleware(['auth', 'auth:web']);
 Route::get('/artist', [ArtistController::class, 'listArtists'])->middleware(['auth', 'auth:web']);

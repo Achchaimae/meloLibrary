@@ -26,6 +26,7 @@
                     <td class="px-6">
                         {{$key +1}}
                     </td>
+                    
                     <td class="flex gap-4 items-center font-bold text-white ">
                         <img src="{{$music->image ? asset('storage/'.$music->image ) :'./images/cover.jpg'}}" alt="{{$music->title}}" class="musicImg w-14 h-14">
                         <a href="/singleMusic/{{$music->id}}" class="title hover:underline">{{$music->title}}</a>

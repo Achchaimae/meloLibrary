@@ -41,9 +41,28 @@
                         <span  class=" cursor-pointer hover:text-white"> {{$music->duration}} </span>
                         {{-- <i id="musicSetting" class="fa-solid fa-ellipsis text-xl cursor-pointer hover:text-white"></i> --}}
                     </td>
-                    <td class="hidden">
-                        <audio controls src="{{asset('storage/'.$music->music)}}" class="audio"></audio>
+                    <td class="date px-6 font-semibold text-gray-900  text-center dark:text-white">                            
+                             {{-- add to playlist --}}
+                        <i class="fa-solid fa-thumbtack  text-xl cursor-pointer text-white  hover:text-red-500 relative" onclick="toggle({{$music->id}})"></i>
+                        {{-- form to add to playlist --}}
+                        <form action="/AddToPlaylist/{{$music->id.'/'.$music->artist}}" method="POST" id="myDIV{{$music->id}}"  class="hidden bg-white right-[5%] rounded flex flex-col text-black ">
+                            @csrf
+                            <select name="playlist" class="bg-transparent ">
+                                @foreach ($playlists as $playlist)
+                                    <option value="select playlist" @disabled(true)></option>
+                                    <option value="{{$playlist->id}}">{{$playlist->name}}</option>
+                                @endforeach
+                            </select>
+                            <button type="submit" class="bg-indigo-400 rounded ">Add</button>    
+                        </form> 
+                      
+
+                       
                     </td>
+                    <td class="hidden">
+                        <audio controls src="{{asset('storage/'.$music->music)}}" class="audio"></audio>""
+                    </td>
+                    
                 </tr>
             @endforeach
         </tbody>
@@ -81,3 +100,13 @@
 
 
 <script src="{{asset('js/handleDate.js')}}"></script>
+<script >
+    function toggle(musicId) {
+   
+    var element = document.querySelectorAll("#myDIV" + musicId);
+
+    for(let el of element) {
+        el.classList.toggle("hidden");
+    }
+}
+</script>

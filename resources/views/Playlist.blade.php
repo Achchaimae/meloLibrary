@@ -31,14 +31,13 @@
                
             </div>
             @foreach ($playlists as $playlist)
-            {{-- {{$playlist->image}} --}}
             <div class="flex flex-col text-center">
                 <div class="bg-[#058ED9] rounded w-60 h-60 p-4 relative  ">
                         <img src="{{asset('storage/'.$playlist->image ) }}" alt="playlist image relative" >
                     
-                            <i   class="fa-solid fa-ellipsis text-black z-10 font-bold text-2xl right-7 top-[5%] absolute hover:cursor-pointer " onclick="toggle()"></i>
+                            <i   class="fa-solid fa-ellipsis text-black z-10 font-bold text-2xl right-7 top-[5%] absolute hover:cursor-pointer " onclick="toggle({{$playlist->id}})"></i>
                         <div class="w-fit">
-                            <div id="myDIV" class="flex flex-col hidden text-center    " >
+                            <div id="myDIV{{$playlist->id}}" class="flex flex-col hidden text-center    " >
                                 <a href="/EditPlaylist/{{$playlist->id}}">
                                     <i class="fa-solid fa-edit text-white z-10  text-xl right-[10%] top-[15%] absolute text-black  "></i>
                                 </a>
@@ -48,9 +47,9 @@
                             </div>
                         </div>
 
-                    {{-- <button class=" relative bottom-20  left-40  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
+                     <button class=" relative bottom-12  left-20  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
                         <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button> --}}
+                    </button> 
                 </div>
                 <h3>{{$playlist->name}}</h3>
             </div>
@@ -63,11 +62,13 @@
 </body>
 </html>
 <script>
-    function toggle() {
-   var element = document.querySelectorAll("#myDIV");
+   function toggle(playlistId) {
+    var element = document.querySelectorAll("#myDIV" + playlistId);
 
-   for(let el of element) {
-         el.classList.toggle("hidden");
-   }
+    for(let el of element) {
+        el.classList.toggle("hidden");
+    }
 }
+
+
 </script>

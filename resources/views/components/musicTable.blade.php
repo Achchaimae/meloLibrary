@@ -45,14 +45,17 @@
                              {{-- add to playlist --}}
                         <i class="fa-solid fa-thumbtack  text-xl cursor-pointer text-white  hover:text-red-500 relative" onclick="toggle({{$music->id}})"></i>
                         {{-- form to add to playlist --}}
-                        <form action="/AddToPlaylist/{{$music->id.'/'.$music->artist}}" method="POST" id="myDIV{{$music->id}}"  class="hidden bg-white right-[5%] rounded flex flex-col text-black ">
+                        <form action="/AddToPlaylist" method="POST" id="myDIV{{$music->id}}"  class="hidden bg-white right-[5%] rounded flex flex-col text-black ">
                             @csrf
-                            <select name="playlist" class="bg-transparent ">
+                            {{-- i need to find a way to send the playlist id to the controller --}}
+                           
+                            <select name="playlist_id" class="bg-transparent ">
                                 @foreach ($playlists as $playlist)
                                     <option value="select playlist" @disabled(true)></option>
                                     <option value="{{$playlist->id}}">{{$playlist->name}}</option>
                                 @endforeach
                             </select>
+                            <input type="hidden" name="music_id" value="{{$music->id}}">
                             <button type="submit" class="bg-indigo-400 rounded ">Add</button>    
                         </form> 
                       

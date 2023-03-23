@@ -23,12 +23,13 @@
     @extends('layouts.Nav')
     @section('content')
    
+    <x-flash-message />
     <section class=" p-2 w-full overflow-y-scroll ">
         @livewire('search')
         <div>
             <h1 class="text-3xl font-bold m-2">Albums</h1>
             <div class=" w-full  flex justify-between gap-2 p pb-44 pt-4 flex-wrap">
-                <x-musicTable :songs=$songs />
+                <x-musicTable :songs=$songs :playlists=$playlists />
             </div>
         </div>
     </section>

@@ -103,6 +103,8 @@ Route::get('/DeleteArtist/{id}', [ArtistController::class, 'DeleteArtist']);
 Route::get('/EditArtist/{id}', [ArtistController::class, 'EditArtist']);
 //update artist
 Route::post('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
+//add to playlist
+Route::post('/AddToPlaylist', [PlaylistController::class, 'addToPlaylist']);
 
 
 

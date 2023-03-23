@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\PlaylistSong;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -49,9 +50,29 @@ class PlaylistController extends Controller
    //delete playlist
     public function DeletePlaylist($id){
      $playlist = Playlist::find($id);
+   
      $playlist->delete();
      return redirect('/playlist')->with('message', 'You have successfully deleted a playlist');
     }
+
+    
+    //add song  to playlist
+    public function addToPlaylist(Request $request)
+{    
+       $music = $request->input('music_id');
+        $playlist = $request->input('playlist_id');   
+        $formFields =[
+            'song_id' => $music,
+            'playlist_id' => $playlist,
+        ];      
+        dd($formFields);
+        // hna fin wsalna 3la l'ajout f la base de donnée
+        PlaylistSong::create($formFields);
+        return redirect('/album')->with('message', 'You have successfully added a song to a playlist');
+       
+        
+    }
+
 }
  
 

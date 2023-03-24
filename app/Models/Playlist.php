@@ -12,4 +12,8 @@ class Playlist extends Model
         'name',
         'image',
     ];
+    public function Songs (){
+        return $this->belongsToMany(Song::class);
+    }
 }
+

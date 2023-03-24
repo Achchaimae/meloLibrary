@@ -21,4 +21,7 @@ class Song extends Model
         'duration',
         'lyrics',
     ];
+    public function playlist (){
+        return $this->belongsToMany(Playlist::class);
+    }
 }

@@ -31,34 +31,41 @@
                
             </div>
             @foreach ($playlists as $playlist)
-            <div class="flex flex-col text-center">
-                <div class="bg-[#058ED9] rounded w-60 h-60 p-4 relative  ">
-                        <img src="{{asset('storage/'.$playlist->image ) }}" alt="playlist image relative" >
-                    
-                            <i   class="fa-solid fa-ellipsis text-black z-10 font-bold text-2xl right-7 top-[5%] absolute hover:cursor-pointer " onclick="toggle({{$playlist->id}})"></i>
-                        <div class="w-fit">
-                            <div id="myDIV{{$playlist->id}}" class="flex flex-col hidden text-center    " >
-                                <a href="/EditPlaylist/{{$playlist->id}}">
-                                    <i class="fa-solid fa-edit text-white z-10  text-xl right-[10%] top-[15%] absolute text-black  "></i>
-                                </a>
-                                <a href="/DeletePlaylist/{{$playlist->id}}">
-                                    <i class="fa-solid fa-trash text-white z-10  text-xl right-[10%] top-[30%] absolute  text-black "></i>
-                                </a>
+                <div class="flex flex-col text-center">
+                    <div class="bg-[#058ED9] rounded w-60 h-60 p-4 relative" >
+                            <img src="{{asset('storage/'.$playlist->image ) }}" alt="playlist image relative" >
+                        
+                                <i   class="fa-solid fa-ellipsis text-black z-10 font-bold text-2xl right-7 top-[5%] absolute hover:cursor-pointer " onclick="toggle({{$playlist->id}})"></i>
+                            <div class="w-fit">
+                                <div id="myDIV{{$playlist->id}}" class="flex flex-col hidden text-center    " >
+                                    <a href="/EditPlaylist/{{$playlist->id}}">
+                                        <i class="fa-solid fa-edit text-white z-10  text-xl right-[10%] top-[15%] absolute text-black  "></i>
+                                    </a>
+                                    <a href="/DeletePlaylist/{{$playlist->id}}">
+                                        <i class="fa-solid fa-trash text-white z-10  text-xl right-[10%] top-[30%] absolute  text-black "></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
 
-                     <button class=" relative bottom-12  left-20  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
-                        <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                    </button> 
+                        <button class=" relative bottom-12  left-20  transition ease-in-out delay-150 hover:scale-110  duration-300  ">
+                            <a href="/myPlaylist/{{$playlist->id}}">
+                                <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
+                            </a>
+                        </button> 
+                    </div>
+                    <h3>{{$playlist->name}}</h3>
                 </div>
-                <h3>{{$playlist->name}}</h3>
-            </div>
+        
             @endforeach
            
            
         </div>
+        
+
     </section>
+   
     @endsection
+
 </body>
 </html>
 <script>
@@ -68,6 +75,7 @@
     for(let el of element) {
         el.classList.toggle("hidden");
     }
+   
 }
 
 

@@ -105,9 +105,5 @@ Route::get('/EditArtist/{id}', [ArtistController::class, 'EditArtist']);
 Route::post('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
 //add to playlist
 Route::post('/AddToPlaylist', [PlaylistController::class, 'addToPlaylist']);
-
-
-
-
-
-
+// show song in playlist
+Route::get('/myPlaylist/{id}',[PlaylistController::class, 'myPlaylist']);

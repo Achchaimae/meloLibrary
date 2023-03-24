@@ -72,34 +72,6 @@
     </table>
 </div>
 
-{{-- 
-<div class="grid grid-cols-4 gap-4">
-    @foreach ($musics as $music)
-        <div id="music" class="allMusics bg-gray-600/30 flex flex-col gap-3 p-4 rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:bg-gray-600/60 ">
-            <img id="musicImg" class="rounded-xl shadow-[0_0_15px] shadow-black object-fill" src="{{asset('storage/' . $music->music_image)}}" alt=""/>
-            <div>
-                <h2 class="text-white font-bold text-xl">{{$music->music_name}}</h2>
-                <p class="text-gray-400">{{$music->artist_group}}</p>
-            </div>
-            <audio controls src="{{asset('storage/' . $music->music_audio)}}" hidden></audio>
-        </div>
-    @endforeach
-</div> --}}
-
-
-{{-- 
-<div class="grid grid-cols-4 gap-4">
-    @foreach ($musics as $music)
-        <div id="music" class="allMusics bg-gray-600/30 flex flex-col gap-3 p-4 rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:bg-gray-600/60 ">
-            <img id="musicImg" class="rounded-xl shadow-[0_0_15px] shadow-black object-fill" src="{{asset('storage/' . $music->music_image)}}" alt=""/>
-            <div>
-                <h2 class="text-white font-bold text-xl">{{$music->music_name}}</h2>
-                <p class="text-gray-400">{{$music->artist_group}}</p>
-            </div>
-            <audio controls src="{{asset('storage/' . $music->music_audio)}}" hidden></audio>
-        </div>
-    @endforeach
-</div> --}}
 
 
 <script src="{{asset('js/handleDate.js')}}"></script>

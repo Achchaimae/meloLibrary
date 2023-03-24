@@ -12,4 +12,5 @@ class PlaylistSong extends Model
         'song_id',
         'playlist_id',
     ];
+    protected $table = 'playlist_song' ;
 }

@@ -34,7 +34,7 @@ Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'au
 // });
 Route::get('Comments', function () {
     return view('Admin/Comments');
-});
+})->middleware('CheckRole:admin');;
 //show register/create form
 Route::get('/register', [UserController::class, 'create']);
 //create new user
@@ -66,7 +66,7 @@ Route::get('/AddPlaylist', function () {
     return view('/GestionUser/AddPlaylist');
 });
 //show bands list
-Route::get('/Bands', [BandController::class, 'showbands'])->middleware(['auth', 'auth:web']);
+Route::get('/Bands', [BandController::class, 'showbands'])->middleware('CheckRole:admin');;
 //Add new playlist to database
 Route::post('/Newplaylist', [PlaylistController::class, 'NewPlaylist']);
 //show playlist list
@@ -96,7 +96,7 @@ Route::get('/AddArtist', function () {
 //add new artist to database
 Route::post('/NewArtist', [ArtistController::class, 'NewArtist']);
 //show artist list
-Route::get('/Artists', [ArtistController::class, 'showArtists']);
+Route::get('/Artists', [ArtistController::class, 'showArtists'])->middleware('CheckRole:admin');;
 //delete artist
 Route::get('/DeleteArtist/{id}', [ArtistController::class, 'DeleteArtist']);
 //edit artist

@@ -34,7 +34,7 @@
       </p>
   
       <form
-        action="authenticate" method="POST"
+        action="/authenticate" method="POST"
         class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
       >
         @csrf

@@ -29,9 +29,9 @@ Route::get('/singleMusic/{id}', [SongsController::class, 'SingleMusic']);
 Route::get('/artist', [ArtistController::class, 'listArtists'])->middleware(['auth', 'auth:web']);
 Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'auth:web']);
 //dashboard page
-Route::get('/Dashboard', function () {
-    return view('Admin/Songs');
-});
+// Route::get('/Dashboard', function () {
+//     return view('Admin/Songs');
+// });
 Route::get('Comments', function () {
     return view('Admin/Comments');
 });
@@ -52,7 +52,7 @@ Route::get('/AddSong', function () {
 //add new song to database
 Route::post('/Newsong', [AdminController::class, 'Newsong']);
 //show song list
-Route::get('/Dashboard', [AdminController::class, 'songlist']);
+Route::get('/Dashboard', [AdminController::class, 'songlist'])->middleware('CheckRole:admin');
 // show Edit song Form
 Route::get('/EditSong/{id}/edit', [AdminController::class, 'EditSong']);
 

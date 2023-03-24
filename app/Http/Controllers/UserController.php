@@ -58,7 +58,8 @@ class UserController extends Controller
             //check if user or admin
            
             if (Auth()->user()->role == 1) {
-                return redirect()->intended('/Dashboard');
+                // dd('success');
+                return redirect('/Dashboard');
             }
             return redirect()->intended('/');
         }

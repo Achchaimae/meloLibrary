@@ -55,7 +55,12 @@ class UserController extends Controller
         // dd($credentials);
         if (Auth()->attempt($formFields)) {
             $request->session()->regenerate();
-            return redirect()->intended('/Dashboard');
+            //check if user or admin
+           
+            if (Auth()->user()->role == 1) {
+                return redirect()->intended('/Dashboard');
+            }
+            return redirect()->intended('/');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.'

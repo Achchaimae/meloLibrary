@@ -24,11 +24,15 @@
     <section class=" px-1 overflow-y-scroll ">
         <div class="flex justify-between items-center">
             <h1 class="font-bold text-3xl pb-5">Discover</h1>
+            @auth
+            @else
             <div>
                 <!-- <i class="fa-solid fa-circle-user text-3xl"></i> -->
-                <button class="border border-white rounded-full px-4 py-2 font-bold hover:bg-white hover:text-black">Sign up</button>
-                <button class="border border-white  bg-white text-black font-bold rounded-full px-4 py-2 hover:scale-105">Log in</button>
+                <button class="border border-white rounded-full px-4 py-2 font-bold hover:bg-white hover:text-black"><a href="/register
+                    ">Register </a></button>
+                <button class="border border-white  bg-white text-black font-bold rounded-full px-4 py-2 hover:scale-105"><a href="/login">Log in</a></button>
             </div>
+            @endauth
         </div>
         
         <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5">Artists</h2>

@@ -30,12 +30,15 @@
                     <span class="hidden sm:inline">Playlist</span>
                 </li>
             </a>
+            @auth
             <a href="/logout" class="hover:bg-white hover:text-blue-500 py-2 relative top-72">
                 <li>
                     <i class="fa-solid fa-sign-out px-5"></i>
                     Logout
                 </li>
             </a>
+            @else
+            @endauth
         
         
     </ul>

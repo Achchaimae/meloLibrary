@@ -49,47 +49,29 @@
                         {{$song->lyrics}}
                     </div>
                 </div>
-        </div>
-        {{-- <div class="flex justify-center items-center ">
-            <div class="flex flex-col justify-center items-center w-[100%]">
-                <img src="{{asset('storage/'.$song->image)}}" alt="" class="w-[100%] h-96 object-cover">
-                
-                <div>
-                    <div class="flex flex-between">
-                        <h1 class="text-3xl text-white font-extrabold">{{$song->title}}</h1>
-                        <div>
-                           
-                             <div class="flex  justify-end items-center px-4">
-                                 <div class="flex justify-end items-center">
-                                     <a href="" class="text-white text-2xl font-bold">
-                                         <i class="fas fa-heart"></i>
-                                     </a>
-                                     <a href="" class="text-white text-2xl font-bold">
-                                         <i class="fas fa-share"></i>
-                                     </a>
-                                 </div>
-                             </div>
-                 
-                         </div>
+                <div class="bg-white m-auto w-[70%] rounded p-2 ">
+                    <h1 class="text-xl font-bold  ">Comments :</h1>
+                    <div class="flex flex-col gap-2 p-2">
+                        <div class="bg-blue-200 w-[50%] px-4 py-1 rounded">
+                            it's a commment
+                        </div>
+                        <div  class="bg-blue-200 w-[50%] px-4 py-1 rounded">
+                            it's another comment
+                        </div>
                     </div>
-                    <h3 class=" text-gray-300 font-medium ">{{$song->artist}}</h3>
+                   <form action="#" method="get" class="text-center  text-black flex flex-col  w-[70%] rounded m-auto ">
+                       <div class="flex gap-2">
+                            <input type="text" value="ahahaha" name="comment" class="bg-gray-100 w-[90%] p-2 rounded">
+                            <button>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                       </div>
+                       
+                   </form>
                 </div>
-              
-                <h1 class="text-2xl font-bold">{{$song->album}}</h1>
-                
-                <h1 class="text-xl font-bold  text-white">Lyrics</h1>
-                <div class="text-white h-44 border-2 w-[70%] border-blue-500 p-2 rounded m-2">
-                    {{$song->lyrics}}
-                </div>
-                
-                <h1 class="text-2xl font-bold">{{$song->description}}</h1>
-                    
-            </div>
-        </div> --}}
-        
-
+        </div>
     </section>
-    <footer class="bot-0">
+    <footer class="bot-0 mt-4">
         <audio controls class="w-[100%] bg-gray-700 text-gray-700 ">
                     <source src="{{asset('storage/'.$song->music)}}" type="audio/mpeg">
                 </audio>

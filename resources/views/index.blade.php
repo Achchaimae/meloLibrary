@@ -36,12 +36,16 @@
         
         <div class="flex justify-between items-center">
             <h1 class="font-bold text-3xl pb-5">Discover</h1>
+            @auth
+            @else
             <div>
                 <!-- <i class="fa-solid fa-circle-user text-3xl"></i> -->
                 <button class="border border-white rounded-full px-4 py-2 font-bold hover:bg-white hover:text-black"><a href="/register
                     ">Register </a></button>
                 <button class="border border-white  bg-white text-black font-bold rounded-full px-4 py-2 hover:scale-105"><a href="/login">Log in</a></button>
             </div>
+            @endauth
+            
         </div>
         
         @livewire('songs-search')
@@ -63,18 +67,7 @@
                 
                
             </div>
-        </div>
-        {{-- <h2 class=" text-gray-300 font-bold text-xl opacity-40 pb-5 py-2">Random You May Like</h2>
-        <div class=" w-full  flex justify-around  pb-44">
-            <div class="bg-gray-700  rounded w-60 h-60 p-4">
-                <img src="./images/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg" alt="playlist image">
-                <button class=" relative bottom-12 left-40  ">
-                    <i class="fa-solid fa-circle-play text-4xl    text-[#058ED9]"></i>
-                </button>
-            </div>
-            
-        </div> --}}
-       
+        </div>   
        
     </section>
     @endsection

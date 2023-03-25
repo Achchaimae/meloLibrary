@@ -85,7 +85,7 @@
   
         <p class="text-center text-sm text-gray-500">
           No account?
-          <a class="underline" href="">Register</a>
+          <a class="underline" href="/register">Register</a>
         </p>
       </form>
     </div>

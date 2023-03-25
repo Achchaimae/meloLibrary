@@ -1,7 +1,7 @@
  
-<aside class="w-20 flex flex-col h-screen sm:w-60 backg bg-gray-800" >
+<aside class="w-20 flex flex-col h-screen sm:w-60 md-62  backg bg-gray-800" >
     <div class="px-5 py-3">
-        <img src="./images/LM9AWED.png" class="w-10 h-10 rounded-full" alt="">
+        <img src="./images/dummy-user.png" class="w-10 h-10 rounded-full" alt="">
     </div>
     <ul class="w-full flex h-96 flex-col place-content-evenly">
 

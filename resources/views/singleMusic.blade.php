@@ -68,7 +68,7 @@
                    <form action="/addComment" method="POST" class="text-center  text-black flex flex-col  w-[70%] rounded m-auto ">
                         @csrf
                        <div class="flex gap-2">
-                            <input type="text" value="ahahaha" name="comment" class="bg-gray-100 w-[90%] p-2 rounded">
+                            <input type="text" placeholder="Enter Your Comment here ..." name="comment" class="bg-gray-100 w-[90%] p-2 rounded">
                             <input type="hidden" name="song_id" value="{{ $song->id }}" />
                             <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                             <button>

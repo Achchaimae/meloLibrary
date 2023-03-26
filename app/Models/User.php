@@ -32,6 +32,19 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Comments::class);
     }
+    // public function likes(){
+    //     return $this->hasMany(Like::class);
+    // }
+        public function hasLiked($song_id)
+    {
+        return $this->likes()->where('song_id', $song_id)->exists();
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

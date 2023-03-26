@@ -75,7 +75,7 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return redirect('/');
     }
-    //
+   
 
     
 }

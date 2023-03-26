@@ -32,12 +32,22 @@
                        
                          <div class="flex  justify-end items-center px-4">
                              <div class="flex justify-end items-center gap-2">
-                                 <a href="" class="text-white text-2xl font-bold">
-                                     <i class="fas fa-heart"></i>
-                                 </a>
-                                 <a href="" class="text-white text-2xl font-bold">
-                                     <i class="fas fa-share"></i>
-                                 </a>
+                                
+                                 <form action="/like" method="POST" class="text-center  text-black flex flex-col  w-[70%] rounded m-auto ">
+                                    @csrf
+                                   <div class="flex gap-2">
+                                        <input type="hidden" name="song_id" value="{{ $song->id }}" />
+                                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }} ">
+                                        <button class="text-white text-2xl font-bold bg-blue-300 {{ session('isLiked') ? 'bg-red-500' : '' }}">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                   </div>
+                                   
+                               </form>
+                               <a href="" class="text-white text-2xl font-bold">
+                                <i class="fas fa-share"></i>
+                               
+                            </a>
                              </div>
                          </div>
              

@@ -3,7 +3,7 @@
     <div class="px-5 py-3">
         <img src="./images/dummy-user.png" class="w-10 h-10 rounded-full" alt="">
     </div>
-    <ul class="w-full flex h-96 flex-col place-content-evenly">
+    <ul class="w-full flex h-[55%] flex-col place-content-evenly gap-3">
 
             <a href="/" class="hover:bg-white hover:text-blue-500 py-2 relative top-20">
                 <li>
@@ -28,6 +28,12 @@
                 <li>
                     <i class="fa-solid fa-music px-5"></i>
                     <span class="hidden sm:inline">Playlist</span>
+                </li>
+            </a>
+            <a href="/likedSongs" class="hover:bg-white hover:text-blue-500 py-2 relative top-20" >
+                <li>
+                    <i class="fa-solid fa-heart  px-5"></i>
+                    <span class="hidden sm:inline">Liked Songs</span>
                 </li>
             </a>
             @auth

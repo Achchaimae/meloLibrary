@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Like;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Song extends Model
 
@@ -29,5 +30,8 @@ class Song extends Model
     }
     public function comments (){
         return $this->hasMany(Comments::class);
+    }
+    public function likes (){
+        return $this->hasMany(Like::class, 'song_id', 'id');
     }
 }

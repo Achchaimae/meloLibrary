@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
@@ -114,4 +115,8 @@ Route::post('/addComment', [CommentController::class, 'addComment']);
 Route::get('/Comments', [CommentController::class, 'showComments'])->middleware('CheckRole:admin');
 //delete comment
 Route::get('/DeleteComment/{id}', [CommentController::class, 'DeleteComment']);
+// add like
+Route::post('/like', [LikeController::class, 'like']);
+//show all likes
+Route::get('/likedSongs', [LikeController::class, 'showLikes']);
 

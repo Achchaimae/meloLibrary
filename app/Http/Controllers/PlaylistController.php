@@ -65,14 +65,14 @@ class PlaylistController extends Controller
             'song_id' => $music,
             'playlist_id' => $playlist,
         ]; 
-        // hna fin wsalna 3la l'ajout f la base de donnée
+        //
        PlaylistSong::create(['song_id' => $music, 'playlist_id' => $playlist]);
 
         return redirect('/album')->with('message', 'You have successfully added a song to a playlist');
               
     }
     public function myPlaylist($id){
-        $playlist =Playlist::find($id);
+        $playlist = Playlist::find($id);
         return view('/myPlaylist', ['playlist' => $playlist]);
     }
 

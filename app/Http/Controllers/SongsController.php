@@ -18,7 +18,8 @@ class SongsController extends Controller
     public function SingleMusic($id)
     {
         $song = Song::find($id);
-        return view('singleMusic', ['song' => $song]);
+        
+        return view('singleMusic', ['song' => $song], ['comments' => $song->comments]);
     }
    
    

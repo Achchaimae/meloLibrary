@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SongsController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PlaylistController;
 
 /*
@@ -107,3 +108,5 @@ Route::post('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
 Route::post('/AddToPlaylist', [PlaylistController::class, 'addToPlaylist']);
 // show song in playlist
 Route::get('/myPlaylist/{id}',[PlaylistController::class, 'myPlaylist']);
+
+Route::post('/addComment', [CommentController::class, 'addComment']);

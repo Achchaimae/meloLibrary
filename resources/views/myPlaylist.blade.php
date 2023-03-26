@@ -51,7 +51,7 @@
             </tr>
         </thead>
         <tbody>
-                {{-- {{dd($playlist->Songs)}} --}}
+                
                 
                 {{-- @foreach ($playlist->Songs  as $playlist) --}}
                 @foreach ($playlist->Songs  as $key => $playlist)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Comments;
 use Illuminate\Http\Request;
 
@@ -23,4 +24,22 @@ class CommentController extends Controller
            ebort(500);
         };
     }
+    //show all comments in admin panel
+    public function showComments()
+    {
+        $comments = Comments::all();
+        $user = User::whereIn('id', $comments->pluck('user_id'))->get();
+
+        return view('Admin/Comments', ['comments' => $comments] , ['users' => $user]);
+    }
+    //delete comment
+    public function DeleteComment($id)
+    {
+        
+        $comment = Comments::find($id);
+        $comment->delete();
+        return redirect('/Comments')->with('message', 'You have successfully deleted a comment');
+    }
+    
+   
 }

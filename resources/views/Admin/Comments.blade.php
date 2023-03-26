@@ -52,57 +52,43 @@
                 <th class="py-3 px-6 text-center">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody> 
+           
+           
+            @foreach ($comments as $comment)
+           
+           
+
             <tr class="border-b border-gray-200 hover:bg-gray-300">
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center font-medium">
-                        that's a good song
+                       {{$comment->comment}}
                     </div>
                 </td>
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center font-medium">
-                        Be with me
+                        {{$comment->song_id}}
                     </div>
                 </td>
                 
                 <td class="py-3 px-6 text-left whitespace-nowrap">
                     <div class="flex items-center font-medium">
-                         Achchaimae khalaf
+                        {{$comment->user_id}}
+                        
                     </div>
                 </td>
                 <td class="py-3 px-6 text-center">
                     <div class="flex item-center justify-center">
                         <div class="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <a href="DeleteComment/{{$comment->id}}">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                           
                         </div>
                     </div>
                 </td>
             </tr>
-            <tr class="border-b border-gray-200 hover:bg-gray-300">
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center font-medium">
-                        that's a good song
-                    </div>
-                </td>
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center font-medium">
-                        Be with me
-                    </div>
-                </td>
-                
-                <td class="py-3 px-6 text-left whitespace-nowrap">
-                    <div class="flex items-center font-medium">
-                         Achchaimae khalaf
-                    </div>
-                </td>
-                <td class="py-3 px-6 text-center">
-                    <div class="flex item-center justify-center">
-                        <div class="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </div>
-                </td>
-            </tr>
+            @endforeach
         </tbody>
    </table>
       

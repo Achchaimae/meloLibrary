@@ -33,9 +33,9 @@ Route::get('/album', [PagesController::class, 'album'])->middleware(['auth', 'au
 // Route::get('/Dashboard', function () {
 //     return view('Admin/Songs');
 // });
-Route::get('Comments', function () {
-    return view('Admin/Comments');
-})->middleware('CheckRole:admin');;
+// Route::get('Comments', function () {
+//     return view('Admin/Comments');
+// })->middleware('CheckRole:admin');;
 //show register/create form
 Route::get('/register', [UserController::class, 'create']);
 //create new user
@@ -108,5 +108,10 @@ Route::post('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
 Route::post('/AddToPlaylist', [PlaylistController::class, 'addToPlaylist']);
 // show song in playlist
 Route::get('/myPlaylist/{id}',[PlaylistController::class, 'myPlaylist']);
-
+//add comment
 Route::post('/addComment', [CommentController::class, 'addComment']);
+//show all comments
+Route::get('/Comments', [CommentController::class, 'showComments'])->middleware('CheckRole:admin');
+//delete comment
+Route::get('/DeleteComment/{id}', [CommentController::class, 'DeleteComment']);
+

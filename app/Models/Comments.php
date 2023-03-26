@@ -17,4 +17,8 @@ class Comments extends Model
     {
         return $this->belongsTo(Song::class);
     }
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

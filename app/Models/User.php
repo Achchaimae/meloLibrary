@@ -29,7 +29,9 @@ class User extends Authenticatable
     public function Song (){
         return $this->belongsToMany(Song::class);
     }
-
+    public function comments(){
+        return $this->hasMany(Comments::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

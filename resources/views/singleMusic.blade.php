@@ -38,7 +38,7 @@
                                    <div class="flex gap-2">
                                         <input type="hidden" name="song_id" value="{{ $song->id }}" />
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }} ">
-                                        <button class="text-white text-2xl font-bold bg-blue-300 {{ session('isLiked') ? 'bg-red-500' : '' }}">
+                                        <button class=" text-2xl font-bold text-blue-300 {{ session('isLiked') ? 'text-red-500' : '' }}">
                                             <i class="fas fa-heart"></i>
                                         </button>
                                    </div>

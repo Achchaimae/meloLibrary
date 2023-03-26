@@ -52,28 +52,28 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($likes  as $key => $music)
+            @foreach ($likes  as $key => $like)
                 <tr class="musicTable bg-transparent hover:bg-gray-200/20 cursor-pointer">
                     <td class="px-6">
                         {{$key +1}}
                     </td>
                     
                     <td class="flex gap-4 items-center font-bold text-white ">
-                        <img src="{{$music->songs->image ? asset('storage/'.$music->songs->image ) :'./images/cover.jpg'}}" alt="{{$music->title}}" class="musicImg w-14 h-14">
-                        <a href="/singleMusic/{{$music->id}}" class="title hover:underline">{{ $music->songs->title }}</a>
+                        <img src="{{$like->songs->image ? asset('storage/'.$like->songs->image ) :'./images/cover.jpg'}}" alt="{{$like->songs->title}}" class="musicImg w-14 h-14">
+                        <a href="/singleMusic/{{$like->songs->id}}" class="title hover:underline">{{$like->songs->title}}</a>
                     </td>
                     <td class="album px-6 font-semibold">
                         {{-- {{$music->}} --}}
-                        {{  $music->songs->artist }}
+                        {{  $like->songs->title }}
                     </td>
                     <td class="date px-6 font-semibold text-gray-900 dark:text-white">
-                        {{$music->songs->release_date}}
+                        {{$like->songs->release_date}}
                     </td>
                     <td class="duration px-6 text-center">
-                        <span  class=" cursor-pointer hover:text-white"> {{$music->songs->duration}} </span>
+                        <span  class=" cursor-pointer hover:text-white"> {{$like->songs->duration}} </span>
                     </td>
                     <td class="hidden">
-                        <audio controls src="{{asset('storage/'.$music->songs->music)}}" class="audio"></audio>""
+                        <audio controls src="{{asset('storage/'.$like->songs->music)}}" class="audio"></audio>""
                     </td>
                     
                 </tr>

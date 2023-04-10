@@ -36,7 +36,7 @@
                                         };
                                         reader.readAsDataURL($refs.photo.files[0]);
                     "
-                    value="{{ old('image') }}">
+                    value="{{$artist->image}} " >
 
                     <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="photo">
                         Profile Photo <span class="text-red-600"> </span>
@@ -60,23 +60,24 @@
                 @error('image')
                 <div class="text-red-500 mt-2 text-sm">
                   {{ $message }}
+                  
                 @enderror
                 {{-- <label for="image" >insert an image for the band</label> --}}
                 {{-- <input type="file" name="image" id="image" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"> --}}
                 <label for="name">name</label>
-                <input type="text" name="name"  value="{{ old('name') }}" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12">
+                <input type="text" name="name"  value="{{$artist->name}}"  class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12">
                 @error('name')
                 <div class="text-red-500 mt-2 text-sm">
                   {{ $message }}
                 @enderror
                 <label for="country">Country?</label>
-                <input type="text" name="country"  value="{{ old('country') }}"   class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"     >
+                <input type="text" name="country"  value="{{$artist->country}}"   class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12"     >
                 @error('country')
                 <div class="text-red-500 mt-2 text-sm">
                   {{ $message }}
                 @enderror
                 <label for="birth">Artist's Birthday ?</label>
-                <input type="date" name="birth"  value="{{ old('birth') }}"  class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12">
+                <input type="date" name="birth"  value="{{$artist->birth}}"  class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm ltr:pr-12 rtl:pl-12">
                 @error('birth')
                 <div class="text-red-500 mt-2 text-sm">
                   {{ $message }}

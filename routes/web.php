@@ -68,7 +68,7 @@ Route::get('/AddPlaylist', function () {
     return view('/GestionUser/AddPlaylist');
 });
 //show bands list
-Route::get('/Bands', [BandController::class, 'showbands'])->middleware('CheckRole:admin');;
+Route::get('/Bands', [BandController::class, 'showbands'])->middleware('CheckRole:admin');
 //Add new playlist to database
 Route::post('/Newplaylist', [PlaylistController::class, 'NewPlaylist']);
 //show playlist list
@@ -104,7 +104,7 @@ Route::get('/DeleteArtist/{id}', [ArtistController::class, 'DeleteArtist']);
 //edit artist
 Route::get('/EditArtist/{id}', [ArtistController::class, 'EditArtist']);
 //update artist
-Route::post('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
+Route::put('/UpdateArtist/{id}', [ArtistController::class, 'UpdateArtist']);
 //add to playlist
 Route::post('/AddToPlaylist', [PlaylistController::class, 'addToPlaylist']);
 // show song in playlist
